@@ -1,0 +1,250 @@
+/* ============================================
+   BRISTAR — warna polos, tanpa gradasi,
+   tanpa highlight, responsif penuh
+   ============================================ */
+
+:root {
+  --bg: #F0EFEA;
+  --surface: #FFFFFF;
+  --ink: #2B2B28;
+  --ink-soft: #63615A;
+  --line: #D8D5CC;
+  --accent: #3F5F52;
+  --accent-ink: #FFFFFF;
+
+  --radius: 10px;
+  --max-width: 760px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 32px 16px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.logo-wrap {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 8px;
+}
+
+.logo {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.logo-fallback {
+  display: none;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.brand {
+  font-size: clamp(28px, 6vw, 40px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.tagline {
+  color: var(--ink-soft);
+  font-size: clamp(14px, 3vw, 16px);
+  max-width: 480px;
+}
+
+.join-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 14px 32px;
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  max-width: 100%;
+  word-break: break-word;
+  transition: opacity 0.15s ease;
+}
+
+.join-btn:hover,
+.join-btn:focus-visible {
+  opacity: 0.88;
+}
+
+.join-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Sections ---------- */
+
+.section-title {
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.info,
+.structure {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+}
+
+.info-text {
+  color: var(--ink-soft);
+  font-size: 15px;
+  max-width: 100%;
+}
+
+/* ---------- Structure grid ---------- */
+
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.structure-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  min-width: 0;
+}
+
+.role {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-soft);
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  text-align: center;
+  padding: 24px 16px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.footer-line {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+/* ---------- Responsif tambahan ---------- */
+
+@media (max-width: 420px) {
+  .page {
+    padding: 32px 14px 24px;
+    gap: 28px;
+  }
+
+  .hero {
+    padding: 24px 12px;
+  }
+
+  .join-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .page {
+    padding-top: 64px;
+  }
+}
